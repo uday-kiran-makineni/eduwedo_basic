@@ -1,5 +1,5 @@
 import React from 'react';
-import { Brain, Glasses, Shield, Cloud, Code } from 'lucide-react';
+import { Brain, Glasses, Shield, Cloud, Code, Database  } from 'lucide-react';
 
 const courses = [
   { name: 'Artificial Intelligence', icon: Brain },
@@ -7,6 +7,7 @@ const courses = [
   { name: 'Cybersecurity', icon: Shield },
   { name: 'Cloud Computing', icon: Cloud },
   { name: 'Full-Stack Development', icon: Code },
+  { name: 'Data Science',icon:Database},
 ];
 
 export default function About() {

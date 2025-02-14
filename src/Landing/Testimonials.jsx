@@ -7,40 +7,46 @@ const testimonials = [
     role: 'Student',
     image: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1738604473/vyshnavi_isfb0c.jpg',
     content: 'The AI course has been an eye-opener for me. The interactive sessions and real-world projects helped me gain practical knowledge that I could apply directly in my career.',
+    rating: 5, 
   },
   {
     name: 'Siri Chandana',
     role: 'Student',
     image: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1738604454/siri_chandana_hu24n7.jpg',
     content: 'EduWedo’s partnership program has revolutionized the way we approach technology education. It has bridged the gap between theory and practice, leading to more engaged and prepared students.',
+    rating: 5, 
   },
   {
     name: 'Pranavi',
     role: 'Student',
     image: 'https://res.cloudinary.com/dzymyjltu/image/upload/v1738604827/WhatsApp_Image_2025-02-03_at_23.16.45_88a860de_pgp8in.jpg',
     content: 'Being a student on this platform has been a fantastic experience. The support system for learners is amazing, and the resources available for studying have helped me engage with the material in more innovative ways.',
+    rating: 4, 
   },
   {
     name: 'Sahithi',
     role: 'Student',
     image: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1738604440/sahithi_vszraa.jpg',
     content: 'I’ve learned so much through the mentorship and peer feedback provided here. It’s not just about the lessons, but the community and growth opportunities that have made the biggest difference in my learning journey.',
+    rating: 5, 
   },
   {
     name: 'Afsha Naaz',
     role: 'Student',
     image: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1738604728/afsha_kf1cz0.jpg',
     content: 'The hands-on approach in this course was crucial to my development. I was able to apply theoretical concepts to real-world problems, and this boosted my confidence and skill set immensely.',
+    rating: 4, 
   },
   {
     name: 'Srujana',
     role: 'Student',
     image: 'https://res.cloudinary.com/dmdiia2yv/image/upload/v1738604735/srujana_kvtynj.jpg',
     content: 'The flexibility of the platform allowed me to balance work and studies seamlessly. I’ve gained new skills and advanced my career thanks to the opportunities EduWedo provided. Highly recommend!',
+    rating: 4, 
   },
 ];
 
-// Duplicate testimonials to create an infinite loop effect
+
 const loopedTestimonials = [...testimonials, ...testimonials];
 
 export default function Testimonials() {
@@ -74,9 +80,13 @@ export default function Testimonials() {
                 className="w-80 flex-shrink-0 mx-4"
               >
                 <div className="bg-gray-50 p-6 rounded-lg h-[400px] relative">
+                  {/* Dynamically generate stars based on rating */}
                   <div className="flex items-center space-x-1 mb-4">
-                    {[...Array(5)].map((_, i) => (
+                    {[...Array(testimonial.rating)].map((_, i) => (
                       <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                    ))}
+                    {[...Array(5 - testimonial.rating)].map((_, i) => (
+                      <Star key={i + 10} className="h-5 w-5 text-gray-300" />
                     ))}
                   </div>
                   <p className="text-gray-600 mb-16">{testimonial.content}</p>

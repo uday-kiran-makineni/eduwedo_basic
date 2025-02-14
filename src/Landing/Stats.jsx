@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const corporateLogos = [
-  "https://res.cloudinary.com/dmdiia2yv/image/upload/v1738602884/l_t_edutech_lfgybr.webp", // Replace with actual corporate partner logos
+  "https://res.cloudinary.com/dmdiia2yv/image/upload/v1738602884/l_t_edutech_lfgybr.webp",
   "https://res.cloudinary.com/dmdiia2yv/image/upload/v1738602895/Retron-energy_orsw4s.png",
   "https://res.cloudinary.com/dmdiia2yv/image/upload/v1738602908/synixiaFBBANNER_zet8xi.jpg",
   "https://res.cloudinary.com/dmdiia2yv/image/upload/v1738602918/ICT-Academy-1024x423_babraz.webp",
@@ -10,7 +10,7 @@ const corporateLogos = [
 ];
 
 const institutionalLogos = [
-  "https://res.cloudinary.com/dmdiia2yv/image/upload/v1738603867/sbit_jbzmxk.jpg", // Replace with actual institutional partner logos
+  "https://res.cloudinary.com/dmdiia2yv/image/upload/v1738603867/sbit_jbzmxk.jpg",
   "https://res.cloudinary.com/dmdiia2yv/image/upload/v1738603875/sree_chai_k0fnfu.jpg",
   "https://res.cloudinary.com/dmdiia2yv/image/upload/v1738603884/vasavi_k4qkqp.png",
   "https://res.cloudinary.com/dmdiia2yv/image/upload/v1738603894/lords_kleczp.png",
@@ -19,8 +19,7 @@ const institutionalLogos = [
   "https://res.cloudinary.com/dmdiia2yv/image/upload/v1738603919/parul_llvpg7.png",
   "https://res.cloudinary.com/dmdiia2yv/image/upload/v1738603927/BVRIT-engineering-technology-college-logo-narsapur_wpzkxj.webp",
   "https://res.cloudinary.com/dmdiia2yv/image/upload/v1738603936/mgit_n1j03l.png",
-  "https://res.cloudinary.com/dmdiia2yv/image/upload/v1738603944/cmr_vtibak.jpg",
-  "https://res.cloudinary.com/dmdiia2yv/image/upload/v1738603953/psna_h6lsxd.png",
+  "https://res.cloudinary.com/dfu5ffbnk/image/upload/v1738656852/psna_swa59q.png",
   "https://res.cloudinary.com/dmdiia2yv/image/upload/v1738603960/BIET_logo_gjkoid.png",
   "https://res.cloudinary.com/dmdiia2yv/image/upload/v1738604024/drk_2_osxieb.png",
 ];
@@ -33,11 +32,14 @@ const Marquee = ({ logos, direction }) => {
     >
       <motion.div
         className="flex gap-8 w-max"
-        animate={{ x: direction === "left" ? ["0%", "-100%"] : ["-100%", "0%"] }}
+        animate={{
+          x: direction === "left" ? ["0%", "-50%"] : ["-50%", "0%"], 
+        }}
         transition={{
           ease: "linear",
-          duration: 40, // Slow animation speed
+          duration: 20, 
           repeat: Infinity,
+          repeatType: "loop", 
         }}
       >
         {logos.concat(logos).map((logo, index) => (
